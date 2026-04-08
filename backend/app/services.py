@@ -1,23 +1,13 @@
 import json
-import pickle
+#import pickle
 import pandas as pd
 
-from backend.app.config import MODELS_DIR, METRICS_DIR, PREDICTIONS_DIR, RESULTS_DIR
+from backend.app.config import METRICS_DIR, PREDICTIONS_DIR, RESULTS_DIR
 
 class ArtifactService:
     @staticmethod
     def list_models():
-        model_files = MODELS_DIR.glob("*.pkl")
-        return [f.stem for f in model_files]
-
-    @staticmethod
-    def load_model(model_name: str):
-        path = MODELS_DIR / f"{model_name}.pkl"
-        if not path.exists():
-            raise FileNotFoundError(f"Model '{model_name}' not found")
-
-        with open(path, "rb") as f:
-            return pickle.load(f)
+        return ["arima", "sarima", "prophet", "xgboost"]
 
     @staticmethod
     def load_metrics(model_name: str):
