@@ -1,9 +1,24 @@
+# Python
+venv312/
+.venv/
 __pycache__/
 *.pyc
-.env
-data/
-models/
+*.pyo
+*.pyd
 
-mlruns/
-*.pkl
-*.joblib
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# OS / IDE
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Optional: local env
+.env
+.env.local
